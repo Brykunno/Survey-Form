@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+       <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit&family=PT+Sans+Caption:wght@700&family=Noto+Sans+Lao:wght@800&family=Noto+Sans+Avestan&family=Open+Sans:wght@300&family=Press+Start+2P&family=Roboto:wght@500&family=Roboto+Slab&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            background-color: #031321;
+            color: white;
+            font-family: "kanit";
+            font-size: 14px;
+            font-weight: normal;
+            
+            
+        }
+        fieldset{
+            margin-top:40px;
+            height:500px;
+            width:500px;
+            border-radius: 10px;
+            border-color: rgb(149, 255, 0);
+        }
+        legend{
+            border: 1px solid;
+            border-radius: 5px;
+            font-family: "roboto";
+            background-color: #031321;
+            color:rgb(149, 255, 0) ;
+        }
+        .cour{
+            padding-left:40px;
+        }
+        .ag{
+            padding-left:60px;
+        }
+        .blur{
+            background-color: rgba(255,255,255,0.07);
+            border-radius: 10px;
+            height:560px;
+            width:555px;
+            position:absolute;
+            top:30px;
+            left:-15px;
+            backdrop-filter: blur(10px);
+            border:2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+           
+        }
+
+        textarea{
+            border-radius: 10px;
+        }
+        
+.cont-contactBtn {
+  height: 359px;
+  margin: 0 auto;
+  width: 574px;
+  position: relative; 
+  perspective: 800px;
+    border-radius: 50px;
+    
+    
+}
+.cont-contactBtn .cont-flip {
+  position: absolute;
+   transition: transform 0.5s;
+   transform-style:preserve-3d;
+   background-color: transparent;
+  height: 100%;
+  width: 100%;
+}
+.cont-contactBtn .cont-flip .front, .cont-contactBtn .cont-flip .back {
+  display: block;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+   backface-visibility: hidden;
+}
+ 
+.cont-contactBtn .cont-flip .back {
+ 
+  transform: rotateY(180deg);
+  
+  
+}
+
+
+.cont-contactBtn .cont-flip.flipped { 
+  transform: rotateY(180deg);
+}
+
+
+        button {
+  border: 3px rgb(149, 255, 0) solid;
+  color: white;
+  display: block;
+  
+  font-weight: normal;
+  margin: 0 auto;
+  max-width: 150px;
+  padding: 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 70%;
+    border-radius: 50px;
+    background:#000000;
+    position: absolute;
+    top:525px;
+    left:195px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    
+}
+button:hover{
+    color: black;
+    background: rgb(23, 175, 0);
+    box-shadow: 0 0 10px rgb(23, 175, 0), 0 0 40px rgb(23, 175, 0),0 0 80px rgb(23, 175, 0);
+}
+
+#frontbtn{
+    filter: hue-rotate(80deg);
+}
+#backbtn{
+    filter: hue-rotate(80deg);
+}
+
+input[type="submit"],input[type="reset"]{
+
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+   background-color: black;
+   border-color: rgb(149, 255, 0);
+   font-size: 15px;
+   letter-spacing: 2px;
+   transition: 0.5s;
+
+}
+
+input[type="submit"]:hover,input[type="reset"]:hover{
+    color: black;
+    background: rgb(23, 175, 0);
+    box-shadow: 0 0 10px rgb(23, 175, 0), 0 0 40px rgb(23, 175, 0),0 0 80px rgb(23, 175, 0);
+}
+.sr{
+    position: relative;
+    top:-10px;
+    margin-left: 50px;
+}
+input[type="reset"]{
+    margin-left: 205px;
+}
+.tw,.thr, .fiv{
+    margin-top: 10px;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+   
+    
+        <div class="cont-contactBtn">
+           
+            <div class="blur"></div>
+                <div class="cont-flip">
+                  
+                    <div class="front">
+                        <form>
+                            <fieldset>
+                                <legend>Survey Form</legend>
+                                <div>
+                                    <label for="fname">First Name:</label>
+                                    <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+                                    
+                                    <label for="course" class="cour">Course: </label>
+                                    <select id="course" class="cour" style="width:125px">
+                                        <option>BSIT</option>
+                                        <option>BSHM</option>
+                                        <option>BSBA</option>
+                                    </select>
+                                
+                                </div>
+                                <br>
+                                <div>
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+                                    <label for="age" class="ag">Age:</label>
+                                    <input type="number" id="age" max="100" min="15" class="ag">
+                                </div>
+                                <br>
+                                <div>
+                                    <label>1. What is your favorite color?</label><br>
+                                    <input type="radio" id="red" name="color">
+                                    <label for="red">Red</label><br>
+                                    <input type="radio" id="yellow" name="color">
+                                    <label for="yellow">Yellow</label><br>
+                                    <input type="radio" id="blue" name="color">
+                                    <label for="blue">Blue</label><br>
+                                    <input type="radio" id="blue" name="color">
+                                    <label for="others">Others:</label>
+                                    <input type="color" id="others" name="color">
+                                </div>
+                                <div class="tw">
+                                    <label>2. What are the devices do you have?</label><br>
+                                    <input type="checkbox" id="sp">
+                                    <label for="sp">Smartphone</label><br>
+                                    <input type="checkbox" id="lt">
+                                    <label for="lt">Laptop</label><br>
+                                    <input type="checkbox" id="dt">
+                                    <label for="dt">Desktop</label><br>
+                                    <input type="checkbox" id="sw">
+                                    <label for="sw">Smart Watch</label><br>
+                                    <input type="checkbox" id="ot">
+                                    <label for="ot">Others:</label>
+                                    <input type="text" id="ot" placeholder="Specify">
+                    
+                                </div>
+                                <div class="thr">
+                                    <label>3. What brand of smartphone are you using right now?</label><br>
+                                    <input type="radio" id="Iphone" name="brand">
+                                    <label for="Iphone">Iphone</label><br>
+                                    <input type="radio" id="Oppo" name="brand">
+                                    <label for="Oppo">Oppo</label><br>
+                                    <input type="radio" id="Samsung" name="brand">
+                                    <label for="Samsung">Samsung</label><br>
+                                    <input type="radio" id="oth" name="brand">
+                                    <label for="oth">Others</label>
+                                    <input type="text" placeholder="Specify">
+                                </div><br>
+                               
+
+                                <a href="#" class="btn btn-white flip"><button id="frontbtn">Next</button></a>
+                            </fieldset>
+                        
+                    </div>
+                    <div class="back">
+                        <a href="#" class="flip close"></a>
+                        
+                            <fieldset>
+                                <legend>Survey Form</legend>
+                                
+                                <div>
+                                    <label>4. How many hours per day do you spend on your smartphone?</label><br>
+                                    <input type="radio" id="one" name="hours">
+                                    <label for="one">1-2 hours</label><br>
+                                    <input type="radio" id="two" name="hours">
+                                    <label for="two">2-4 hours</label><br>
+                                    <input type="radio" id="four" name="hours">
+                                    <label for="four">4-6 hours</label><br>
+                                    <input type="radio" id="othr" name="hours">
+                                    <label for="othr">Others</label>
+                                    <input type="text" placeholder="Specify">
+                                    
+                                </div>
+                                <div class="fiv">
+                                    <label>5. For what purpose do you use your smartphones?</label><br>
+                                    <input type="radio" id="Edu" name="pur">
+                                    <label for="Edu">Education</label><br>
+                                    
+                                   <input type="radio" id="wor" name="pur">
+                                    <label for="wor">Work</label><br>
+
+                                    <input type="radio" id="ent" name="pur">
+                                    <label for="ent">Entertainment</label><br>
+
+                                    <input type="radio" id="otpr" name="pur">
+                                    <label for="otpr">Others</label>
+                                    <input type="text" placeholder="Specify">
+
+                                   
+                                </div><br>
+
+                                <div>
+                                    <label>Do you have any suggestions about this survey?</label><br>
+                                    <textarea placeholder="Write your Comment here" rows="8" cols="75"></textarea>
+                                    
+                                </div><br>
+                                <div class="sr">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                                <a href="#" class="btn btn-white flip"><button id="backbtn">Back</button></a>
+                            </fieldset>
+                        </form>
+                    </div>
+              
+
+                </div>
+            
+        </div>
+   
+        <script>
+            
+            $(document).ready(function(){
+  $('.flip').click(function(){
+    $('.cont-flip').toggleClass('flipped');
+    return false;
+  });
+});
+            </script>
+    
+    
+</body>
+</html>
